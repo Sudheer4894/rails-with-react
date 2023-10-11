@@ -94,6 +94,8 @@ const QuestionDetails = (props) => {
     })
       .then((response) => response.json())
       .then((responseData) => {
+        setLikeCount(responseData.likes_count);
+        setdisLikeCount(responseData.dislikes_count);
         console.log(responseData);
       })
       .catch((error) => {
@@ -109,7 +111,7 @@ const QuestionDetails = (props) => {
       <div className='card rounded-0 mt-3'>
       {/* <div className='card rounded-0 mt-3' key={index.toString()}> */}
         <div className='card-body'>
-          <h3 className='card-title'>{props.question.title}</h3>
+          <h3 className='card-title'>{props.index}&nbsp;{props.question.title}</h3>
           <p className='lead'>
             <span className='badge bg-primary'>{props.question.tag}</span>
           </p>
