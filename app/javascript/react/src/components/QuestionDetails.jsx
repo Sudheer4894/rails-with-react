@@ -85,7 +85,7 @@ const QuestionDetails = (props) => {
   const [disLikeCount, setdisLikeCount] = useState(props.question.dislikes_count)
 
   const updateQuestionCounter = (data) => {
-    fetch(`http://localhost:3006/api/v1/questions/${props.question.id}/update_counter`, {
+    fetch(`api/v1/questions/${props.question.id}/update_counter`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
