@@ -31,7 +31,7 @@ import *as ReactDom from 'react-dom';
 //   }
 
 //   updateQuestionCounter = (data) => {
-//     fetch('http://localhost:3006/api/v1/questions/${this.props.question.id}/update_counter', {
+//     fetch('/api/v1/questions/${this.props.question.id}/update_counter', {
 //       method: 'PUT',
 //       headers: {
 //         'Content-Type': 'application/json'
