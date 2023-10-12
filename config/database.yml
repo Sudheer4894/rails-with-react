@@ -22,6 +22,7 @@ test:
   database: <%= ENV['DATABASE_URL']%>
 
 production:
+  adapter: postgresql
   pool: <%= ENV["DB_POOL"] || ENV['RAILS_MAX_THREADS'] || 5 %>
   timeout: 5000
   database: <%= ENV["DATABASE_URL"] %>
