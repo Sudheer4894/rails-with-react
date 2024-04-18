@@ -23,35 +23,38 @@ const QuestionList = () => {
   const [isShowAlert, setIsShowAlert] = useState(false)
   const [isShowLoader, setIsShowLoader] = useState(true)
 
+  base_url = ENV['BASE_URL']
+  const questionUrl = `{base_url}/api/v1/questions`
+  
   // const questionUrl = `http://localhost:3006/api/v1/questions`
-  // const questionList = fetch
+  const questionList = fetch
 
   // Fetch data through fetch() method
-  // const fetchQuestionList = () => {
-  //   setIsShowLoader(false)
-  //   fetch(questionUrl)
-  //     .then((responce) => responce.json())
-  //     .then((data) => {
-  //       console.log(data);
-  //       setQuestionsList(data)
-  //     })
-  // }
-
-
-  const fetchQuestionList = async () => {
-    try {
-        const events = await api.get('api/v1/questions', {
-            headers: {
-                "Content-Type": "application/json",
-                "Accept": 'application/json'
-            },
-        });
-        const data = await events.data;
+  const fetchQuestionList = () => {
+    setIsShowLoader(false)
+    fetch(questionUrl)
+      .then((responce) => responce.json())
+      .then((data) => {
+        console.log(data);
         setQuestionsList(data)
-    } catch (error) {
-        console.error('API Call Error:', error);
-    }
-};
+      })
+  }
+
+
+//   const fetchQuestionList = async () => {
+//     try {
+//         const events = await api.get('api/v1/questions', {
+//             headers: {
+//                 "Content-Type": "application/json",
+//                 "Accept": 'application/json'
+//             },
+//         });
+//         const data = await events.data;
+//         setQuestionsList(data)
+//     } catch (error) {
+//         console.error('API Call Error:', error);
+//     }
+// };
 
   
   useEffect(() => {
