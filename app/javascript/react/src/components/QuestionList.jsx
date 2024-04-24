@@ -23,8 +23,8 @@ const QuestionList = () => {
   const [isShowAlert, setIsShowAlert] = useState(false)
   const [isShowLoader, setIsShowLoader] = useState(true)
 
-  base_url = ENV['BASE_URL']
-  const questionUrl = `{base_url}/api/v1/questions`
+  const base_url = window.location.origin;
+  const questionUrl = `${base_url}/api/v1/questions`;
   
   // const questionUrl = `http://localhost:3006/api/v1/questions`
   const questionList = fetch
